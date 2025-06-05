@@ -93,6 +93,8 @@ INSERT OR IGNORE INTO "CONFIG" VALUES('SubscriberRegistry.UpstreamServer','',0,0
 INSERT OR IGNORE INTO "CONFIG" VALUES('SubscriberRegistry.db','/var/lib/asterisk/sqlite3dir/sqlite3.db',0,0,'The location of the sqlite3 database holding the subscriber registry.');
 INSERT OR IGNORE INTO "CONFIG" VALUES('TRX.IP','127.0.0.1',1,0,'IP address of the transceiver application.  Static.');
 INSERT OR IGNORE INTO "CONFIG" VALUES('TRX.Port','5700',1,0,'IP port of the transceiver application.  Static.');
+INSERT OR IGNORE INTO "CONFIG" VALUES('LLSK.RemoteAddr','127.0.0.1',1,0,'IP address of the remote LLSK server.  Static.');
+INSERT OR IGNORE INTO "CONFIG" VALUES('LLSK.RemotePort','4261',1,0,'UDP port of the remote LLSK server.  Static.');
 INSERT OR IGNORE INTO "CONFIG" VALUES('TRX.RadioFrequencyOffset','128',1,0,'Fine-tuning adjustment for the transceiver master clock.  Roughly 170 Hz/step.  Set at the factory.  Do not adjust without proper calibration.  Static.');
 INSERT OR IGNORE INTO "CONFIG" VALUES('TRX.TxAttenOffset','0',1,0,'Hardware-specific gain adjustment for transmitter, matched to the power amplifier, expessed as an attenuationi in dB.  Set at the factory.  Do not adjust without proper calibration.  Static.');
 INSERT OR IGNORE INTO "CONFIG" VALUES('UMTS.AICH.AICH-PowerOffset','-10',0,0,'AICH power offset in dB.');

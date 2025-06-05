@@ -24,6 +24,7 @@ ConfigurationTable gConfig("/etc/OpenBTS/OpenBTS-UMTS.db","OpenBTS-UMTS", getCon
 #include <TRXManager.h>
 #include <UMTSConfig.h>
 #include <SIPInterface.h>
+#include <LLSKInterface.h>
 #include <TransactionTable.h>
 #include <ControlCommon.h>
 
@@ -69,6 +70,9 @@ Control::TransactionTable gTransactionTable(gConfig.getStr("Control.Reporting.Tr
 
 // The global SIPInterface object.
 SIP::SIPInterface gSIPInterface;
+
+// Interface towards gNodeB via LLSK
+LLSKInterface gLLSKInterface;
 
 /** The remote node manager. */ 
 NodeManager gNodeManager;
@@ -180,8 +184,10 @@ int main(int argc, char *argv[])
 	startTransceiver();	// (pat) This is now a no-op because transceiver is built-in.
 	sleep(5);
 	// Start the SIP interface.
-	LOG(INFO) << "Starting the SIP interface...";
-	gSIPInterface.start();
+        LOG(INFO) << "Starting the SIP interface...";
+        gSIPInterface.start();
+        LOG(INFO) << "Starting the LLSK interface...";
+        gLLSKInterface.start();
 
 
 	//
