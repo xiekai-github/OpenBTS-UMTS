@@ -83,6 +83,9 @@ AS_IF([gcc -I=/usr/local/include -o config/test_ortp_version config/test_ortp_ve
 # Defines LIBUSB_TRANSFER_CANCELLED, LIBUSB_TRANSFER_COMPLETED, LIBUSB_SUCCESS, LIBUSB_ERROR_*
 PKG_CHECK_MODULES(LIBUSB, libusb-1.0)
 
+PKG_CHECK_MODULES(OSMOCORE, libosmocore)
+PKG_CHECK_MODULES(OSMO_NETIF, libosmo-netif)
+
 PKG_CHECK_MODULES(UHD, uhd >= 003.007.000,
     [AC_DEFINE(HAVE_UHD, 1, [Define if UHD found.])
      AM_CONDITIONAL(HAVE_UHD, true)

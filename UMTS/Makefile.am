@@ -36,8 +36,9 @@ libUMTS_la_SOURCES = \
 	sigProcLib.cpp \
 	IntegrityProtect.cpp \
 	UMTSCLI.cpp \
-	AsnHelper.cpp \
-	RateMatch.cpp
+        AsnHelper.cpp \
+        RateMatch.cpp \
+        LLSKInterface.cpp
 
 noinst_HEADERS = \
 	UMTSL1Const.h \
@@ -58,7 +59,9 @@ noinst_HEADERS = \
 	URRCMessages.h \
 	UMTSPhCh.h \
 	sigProcLib.h \
-	signalVector.h \
-	RateMatch.h
+        signalVector.h \
+        RateMatch.h \
+        LLSKInterface.h
 
 
+libUMTS_la_LIBADD = $(OSMOCORE_LIBS) $(OSMO_NETIF_LIBS)

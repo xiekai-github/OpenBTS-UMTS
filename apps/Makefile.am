@@ -20,21 +20,22 @@ noinst_PROGRAMS = \
 
 OpenBTS_UMTS_SOURCES = OpenBTS-UMTS.cpp GetConfigurationKeys.cpp
 OpenBTS_UMTS_LDADD = \
-	$(GLOBALS_LA) \
-	$(CLI_LA) \
-	$(TRX_LA) \
-	$(SIP_LA) \
-	$(UMTS_LA) \
-	$(CONTROL_LA) \
-	$(SGSNGGSN_LA) \
-	$(ASN_LA) \
-	$(GSM_LA) \
-	$(SMS_LA) \
-	$(NODEMANAGER_LA) \
-	$(OSIP_LIBS) \
-	$(ORTP_LIBS) \
-	$(COMMON_LA)
-OpenBTS_UMTS_CPPFLAGS = $(STD_DEFINES_AND_INCLUDES)
+        $(GLOBALS_LA) \
+        $(CLI_LA) \
+        $(TRX_LA) \
+        $(SIP_LA) \
+        $(UMTS_LA) \
+        $(CONTROL_LA) \
+        $(SGSNGGSN_LA) \
+        $(ASN_LA) \
+        $(GSM_LA) \
+        $(SMS_LA) \
+        $(NODEMANAGER_LA) \
+        $(OSMOCORE_LIBS) $(OSMO_NETIF_LIBS) \
+        $(OSIP_LIBS) \
+        $(ORTP_LIBS) \
+        $(COMMON_LA)
+OpenBTS_UMTS_CPPFLAGS = $(STD_DEFINES_AND_INCLUDES) $(OSMOCORE_CFLAGS) $(OSMO_NETIF_CFLAGS)
 
 OpenBTS_UMTSCLI_SOURCES = OpenBTS-UMTSCLI.cpp
 OpenBTS_UMTSCLI_LDADD = -lreadline
