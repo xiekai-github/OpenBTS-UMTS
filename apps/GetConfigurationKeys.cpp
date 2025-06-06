@@ -1149,38 +1149,16 @@ ConfigurationKeyMap getConfigurationKeys()
 	map[tmp->getName()] = *tmp;
 	delete tmp;
 
-        tmp = new ConfigurationKey("TRX.Port","5700",
-                "",
-                ConfigurationKey::FACTORY,
-                ConfigurationKey::PORT,
-                "",
-                true,
-                "IP port of the transceiver application."
-        );
-        map[tmp->getName()] = *tmp;
-        delete tmp;
-
-        tmp = new ConfigurationKey("LLSK.RemoteAddr","127.0.0.1",
-                "",
-                ConfigurationKey::CUSTOMERWARN,
-                ConfigurationKey::IPADDRESS,
-                "",
-                true,
-                "Remote LLSK server IP address."
-        );
-        map[tmp->getName()] = *tmp;
-        delete tmp;
-
-        tmp = new ConfigurationKey("LLSK.RemotePort","4261",
-                "",
-                ConfigurationKey::CUSTOMERWARN,
-                ConfigurationKey::PORT,
-                "",
-                true,
-                "Remote LLSK server UDP port."
-        );
-        map[tmp->getName()] = *tmp;
-        delete tmp;
+	tmp = new ConfigurationKey("TRX.Port","5700",
+		"",
+		ConfigurationKey::FACTORY,
+		ConfigurationKey::PORT,
+		"",
+		true,
+		"IP port of the transceiver application."
+	);
+	map[tmp->getName()] = *tmp;
+	delete tmp;
 
 	tmp = new ConfigurationKey("TRX.RadioFrequencyOffset","128",
 		"~170Hz steps",
